@@ -1,0 +1,19 @@
+fastapi==0.110.1
+uvicorn==0.29.0
+pydantic==2.7.1
+motor==3.4.0
+pymongo==4.5.0
+pydantic[email]
+# OpenTelemetry core
+opentelemetry-api==1.24.0
+opentelemetry-sdk==1.24.0
+
+# OTLP Exporters (gRPC for Grafana Alloy / OTLP Collector)
+opentelemetry-exporter-otlp==1.24.0
+opentelemetry-exporter-otlp-proto-grpc==1.24.0
+
+# FastAPI Instrumentation
+opentelemetry-instrumentation-fastapi==0.45b0
+
+# For proper attribute naming
+opentelemetry-semantic-conventions==0.45b0

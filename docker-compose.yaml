@@ -1,0 +1,57 @@
+version: "3.9"
+
+services:
+
+  server:
+    build:
+      context: .
+      dockerfile: Server/Dockerfile
+    container_name: fastapi_server
+    ports:
+      - "8000:8000"
+    depends_on:
+      - alloy
+    environment:
+      - OTEL_EXPORTER_OTLP_ENDPOINT=http://alloy:4317
+    volumes:
+      - ./logs:/app/routers/logs
+    restart: unless-stopped
+
+  alloy:
+    image:  grafana/alloy:latest
+    volumes:
+      - ./config.alloy:/etc/alloy/config.alloy
+    command: ["run", "/etc/alloy/config.alloy"]
+    ports:
+      - "54317:4317"   # OTLP gRPC
+
+  prometheus:
+    image: prom/prometheus:latest
+    ports:
+      - "9091:9090"
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    command: ["--config.file=/etc/prometheus/prometheus.yml", "--web.enable-remote-write-receiver"]
+
+  loki:
+    image: grafana/loki:latest
+    ports:
+      - "3100:3100"
+
+  tempo:
+    image: grafana/tempo:latest
+    volumes:
+      - ./tempo.yaml:/etc/tempo/tempo.yaml
+    command: [ "-config.file=/etc/tempo/tempo.yaml" ]
+    ports:
+      - "3200:3200"
+      - "4317:4317"
+
+  grafana:
+    image: grafana/grafana:latest
+    ports:
+      - "3000:3000"
+    depends_on:
+      - prometheus
+      - tempo
+      - loki
