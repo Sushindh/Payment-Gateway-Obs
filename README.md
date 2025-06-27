@@ -59,43 +59,13 @@ Observability is the ability to **measure the internal state** of a system by ex
 
 ### 🔍 The Three Pillars of Observability
 
-<table>
-<tr>
-<td align="center">
-
-### 📊 **Metrics**
-*Quantitative measurements*
-
-- Request count
-- Response times
-- CPU/Memory usage
-- Error rates
-
-</td>
-<td align="center">
-
-### 📝 **Logs**
-*Textual event records*
-
-- Application events
-- Error messages
-- Debug information
-- Audit trails
-
-</td>
-<td align="center">
-
-### 🔗 **Traces**
-*Request journey tracking*
-
-- Distributed tracing
-- Service interactions
-- Latency breakdown
-- Performance insights
-
-</td>
-</tr>
-</table>
+| 📊 **Metrics** | 📝 **Logs** | 🔗 **Traces** |
+|----------------|-------------|---------------|
+| *Quantitative measurements* | *Textual event records* | *Request journey tracking* |
+| • Request count | • Application events | • Distributed tracing |
+| • Response times | • Error messages | • Service interactions |
+| • CPU/Memory usage | • Debug information | • Latency breakdown |
+| • Error rates | • Audit trails | • Performance insights |
 
 ---
 
@@ -116,8 +86,13 @@ graph TB
     G --> H
     
     H -->|Alerts| I[Alert Manager]
+```
 
-🗂️ Project Structure
+---
+
+## 🗂️ Project Structure
+
+```
 Payment-Gateway-Obs/
 │
 ├── 🐳 docker-compose.yaml          # Multi-service orchestration
@@ -141,175 +116,200 @@ Payment-Gateway-Obs/
     ├── 📁 src/
     ├── 📦 package.json
     └── ⚙️ vite.config.js
+```
 
-🚀 Getting Started
-Prerequisites
+---
 
-🐳 Docker and Docker Compose
-💻 Git
-🌐 Web Browser
+## 🚀 Getting Started
 
-Installation Steps
+### Prerequisites
 
-Clone the Repository
-bashgit clone https://github.com/your-username/Payment-Gateway-Obs.git
-cd Payment-Gateway-Obs
+- 🐳 **Docker** and **Docker Compose**
+- 💻 **Git**
+- 🌐 **Web Browser**
 
-Create Required Directories
-bashmkdir -p server/routers/logs
+### Installation Steps
 
-Launch the Stack
-bashdocker-compose up --build
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/your-username/Payment-Gateway-Obs.git
+   cd Payment-Gateway-Obs
+   ```
 
-Verify Services
-Wait for all services to start, then access:
+2. **Create Required Directories**
+   ```bash
+   mkdir -p server/routers/logs
+   ```
 
-🌐 Service URLs
-ServiceURLPurpose🎨 Frontendhttp://localhost:5173React UI🔧 Backend APIhttp://localhost:8000FastAPI endpoints📊 Grafanahttp://localhost:3000Dashboards & visualization📈 Prometheushttp://localhost:9091Metrics collection🔍 Tempohttp://localhost:3200Distributed tracing📜 Lokihttp://localhost:3100Log aggregation
+3. **Launch the Stack**
+   ```bash
+   docker-compose up --build
+   ```
 
-Default Grafana Credentials: admin / admin
+4. **Verify Services**
+   
+   Wait for all services to start, then access:
 
+### 🌐 Service URLs
 
-⚙️ Features
-🔗 API Endpoints
-MethodEndpointDescriptionObservability FeaturesPOST/paymentProcess payment transactions✅ Metrics, Logs, TracesGET/transactionsRetrieve transaction history✅ Performance monitoringPOST/adminSimulate error scenarios✅ Error trackingGET/admin/healthSystem health check✅ Availability metrics
-📊 Observability Features
-<table>
-<tr>
-<td>
-📈 Metrics Collection
+| Service | URL | Purpose |
+|---------|-----|---------|
+| 🎨 **Frontend** | [http://localhost:5173](http://localhost:5173) | React UI |
+| 🔧 **Backend API** | [http://localhost:8000](http://localhost:8000) | FastAPI endpoints |
+| 📊 **Grafana** | [http://localhost:3000](http://localhost:3000) | Dashboards & visualization |
+| 📈 **Prometheus** | [http://localhost:9091](http://localhost:9091) | Metrics collection |
+| 🔍 **Tempo** | [http://localhost:3200](http://localhost:3200) | Distributed tracing |
+| 📜 **Loki** | [http://localhost:3100](http://localhost:3100) | Log aggregation |
 
-Request count and rates
-Response time percentiles
-Error rates by endpoint
-System resource usage
-Custom business metrics
+> **Default Grafana Credentials:** `admin` / `admin`
 
-</td>
-<td>
-📝 Structured Logging
+---
 
-Request/response logging
-Error context capture
-Performance markers
-Business event tracking
-Correlation IDs
+## ⚙️ Features
 
-</td>
-<td>
-🔗 Distributed Tracing
+### 🔗 API Endpoints
 
-End-to-end request tracking
-Service dependency mapping
-Latency breakdown analysis
-Error propagation tracing
-Performance bottleneck identification
+| Method | Endpoint | Description | Observability Features |
+|--------|----------|-------------|----------------------|
+| `POST` | `/payment` | Process payment transactions | ✅ Metrics, Logs, Traces |
+| `GET` | `/transactions` | Retrieve transaction history | ✅ Performance monitoring |
+| `POST` | `/admin` | Simulate error scenarios | ✅ Error tracking |
+| `GET` | `/admin/health` | System health check | ✅ Availability metrics |
 
-</td>
-</tr>
-</table>
+### 📊 Observability Features
 
-📊 Grafana Dashboards
-Available Dashboards
+#### 📈 **Metrics Collection**
+- Request count and rates
+- Response time percentiles
+- Error rates by endpoint
+- System resource usage
+- Custom business metrics
 
-🎯 Application Performance Monitoring (APM)
+#### 📝 **Structured Logging**
+- Request/response logging
+- Error context capture
+- Performance markers
+- Business event tracking
+- Correlation IDs
 
-Request throughput and latency
-Error rates and success metrics
-Service health indicators
+#### 🔗 **Distributed Tracing**
+- End-to-end request tracking
+- Service dependency mapping
+- Latency breakdown analysis
+- Error propagation tracing
+- Performance bottleneck identification
 
+---
 
-🔍 Distributed Tracing
+## 📊 Grafana Dashboards
 
-Request flow visualization
-Service dependency graphs
-Latency heatmaps
+### Available Dashboards
 
+1. **🎯 Application Performance Monitoring (APM)**
+   - Request throughput and latency
+   - Error rates and success metrics
+   - Service health indicators
 
-📊 Infrastructure Monitoring
+2. **🔍 Distributed Tracing**
+   - Request flow visualization
+   - Service dependency graphs
+   - Latency heatmaps
 
-System resource utilization
-Database performance
-Container metrics
+3. **📊 Infrastructure Monitoring**
+   - System resource utilization
+   - Database performance
+   - Container metrics
 
+4. **🚨 Error Analysis**
+   - Error rate trends
+   - Exception tracking
+   - Failure pattern analysis
 
-🚨 Error Analysis
+### Sample Visualizations
 
-Error rate trends
-Exception tracking
-Failure pattern analysis
+- 📈 **Request Rate**: Real-time API call frequency
+- ⏱️ **Response Time**: P50, P95, P99 latency percentiles
+- 🚨 **Error Rate**: 4xx and 5xx error percentages
+- 🔄 **Transaction Volume**: Payment processing metrics
 
+---
 
+## 🔔 Alerts Configuration
 
-Sample Visualizations
+### Predefined Alert Rules
 
-📈 Request Rate: Real-time API call frequency
-⏱️ Response Time: P50, P95, P99 latency percentiles
-🚨 Error Rate: 4xx and 5xx error percentages
-🔄 Transaction Volume: Payment processing metrics
+| Alert | Condition | Severity |
+|-------|-----------|----------|
+| 🚨 **High Error Rate** | Error rate > 5% for 5 minutes | Critical |
+| 🐌 **Slow Response** | P95 latency > 1000ms for 2 minutes | Warning |
+| 📉 **Low Transaction Volume** | Transaction rate < 10/hour | Warning |
+| 💾 **Database Connection** | MongoDB connection failures | Critical |
+| 🔧 **Service Unavailable** | Health check failures | Critical |
 
+### Alert Channels
+- 📧 Email notifications
+- 💬 Slack integration
+- 📱 PagerDuty escalation
 
-🔔 Alerts Configuration
-Predefined Alert Rules
-AlertConditionSeverity🚨 High Error RateError rate > 5% for 5 minutesCritical🐌 Slow ResponseP95 latency > 1000ms for 2 minutesWarning📉 Low Transaction VolumeTransaction rate < 10/hourWarning💾 Database ConnectionMongoDB connection failuresCritical🔧 Service UnavailableHealth check failuresCritical
-Alert Channels
+---
 
-📧 Email notifications
-💬 Slack integration
-📱 PagerDuty escalation
+## 🛠️ Tech Stack
 
+### Backend
+- **🚀 FastAPI** - High-performance Python web framework
+- **🔍 OpenTelemetry** - Observability instrumentation
+- **💾 MongoDB** - Document database
+- **📊 Pydantic** - Data validation and serialization
 
-🛠️ Tech Stack
-Backend
+### Frontend
+- **⚛️ React.js** - UI framework
+- **⚡ Vite** - Build tool and dev server
+- **🎨 Modern CSS** - Responsive design
 
-🚀 FastAPI - High-performance Python web framework
-🔍 OpenTelemetry - Observability instrumentation
-💾 MongoDB - Document database
-📊 Pydantic - Data validation and serialization
+### Observability Stack
+- **📊 Grafana** - Visualization and dashboards
+- **📈 Prometheus** - Metrics collection and alerting
+- **📜 Loki** - Log aggregation
+- **🔍 Tempo** - Distributed tracing
+- **🔄 Grafana Alloy** - Telemetry collection agent
 
-Frontend
+### Infrastructure
+- **🐳 Docker** - Containerization
+- **🔧 Docker Compose** - Multi-service orchestration
 
-⚛️ React.js - UI framework
-⚡ Vite - Build tool and dev server
-🎨 Modern CSS - Responsive design
+---
 
-Observability Stack
+## 🤝 Contributing
 
-📊 Grafana - Visualization and dashboards
-📈 Prometheus - Metrics collection and alerting
-📜 Loki - Log aggregation
-🔍 Tempo - Distributed tracing
-🔄 Grafana Alloy - Telemetry collection agent
+We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details.
 
-Infrastructure
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a Pull Request
 
-🐳 Docker - Containerization
-🔧 Docker Compose - Multi-service orchestration
+---
 
+## 📞 Support
 
-🤝 Contributing
-We welcome contributions! Please see our Contributing Guidelines for details.
+- 📖 **Documentation**: Check the `/docs` directory
+- 🐛 **Issues**: Report bugs via GitHub Issues
+- 💬 **Discussions**: Join our community discussions
+- 📧 **Contact**: your-email@example.com
 
-Fork the repository
-Create a feature branch
-Commit your changes
-Push to the branch
-Create a Pull Request
+---
 
+## 📜 License
 
-📞 Support
+This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
 
-📖 Documentation: Check the /docs directory
-🐛 Issues: Report bugs via GitHub Issues
-💬 Discussions: Join our community discussions
-📧 Contact: your-email@example.com
-
-
-📜 License
-This project is licensed under the MIT License - see the LICENSE file for details.
+---
 
 <div align="center">
-⭐ Star this repository if you find it helpful!
-Made with ❤️ by Your Name
+
+**⭐ Star this repository if you find it helpful!**
+
+Made with ❤️ by [Your Name](https://github.com/your-username)
+
 </div>
-```
