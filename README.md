@@ -67,6 +67,8 @@ Observability is the ability to **measure the internal state** of a system by ex
 | • CPU/Memory usage | • Debug information | • Latency breakdown |
 | • Error rates | • Audit trails | • Performance insights |
 
+- For More knowledge feel free to see this docs https://observability-using-grafana-alloy.hashnode.space/default-guide/obervability-using-grafana-alloy?t=1751020251823
+
 ---
 
 ## 🏗️ Architecture
