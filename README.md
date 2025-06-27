@@ -264,7 +264,7 @@ Payment-Gateway-Obs/
 ### Frontend
 - **⚛️ React.js** - UI framework
 - **⚡ Vite** - Build tool and dev server
-- **🎨 Modern CSS** - Responsive design
+- **🎨 Tailwind CSS** - Responsive design
 
 ### Observability Stack
 - **📊 Grafana** - Visualization and dashboards
