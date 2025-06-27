@@ -310,6 +310,6 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 **⭐ Star this repository if you find it helpful!**
 
-Made with ❤️ by [Your Name](https://github.com/your-username)
+Made by [Sushindh A](https://github.com/Sushindh)
 
 </div>
