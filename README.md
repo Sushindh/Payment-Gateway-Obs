@@ -24,7 +24,6 @@
 - [🚀 Getting Started](#-getting-started)
 - [⚙️ Features](#️-features)
 - [📊 Grafana Dashboards](#-grafana-dashboards)
-- [🔔 Alerts Configuration](#-alerts-configuration)
 - [🛠️ Tech Stack](#️-tech-stack)
 - [📜 License](#-license)
 
@@ -231,25 +230,6 @@ Payment-Gateway-Obs/
 - ⏱️ **Response Time**: P50, P95, P99 latency percentiles
 - 🚨 **Error Rate**: 4xx and 5xx error percentages
 - 🔄 **Transaction Volume**: Payment processing metrics
-
----
-
-## 🔔 Alerts Configuration
-
-### Predefined Alert Rules
-
-| Alert | Condition | Severity |
-|-------|-----------|----------|
-| 🚨 **High Error Rate** | Error rate > 5% for 5 minutes | Critical |
-| 🐌 **Slow Response** | P95 latency > 1000ms for 2 minutes | Warning |
-| 📉 **Low Transaction Volume** | Transaction rate < 10/hour | Warning |
-| 💾 **Database Connection** | MongoDB connection failures | Critical |
-| 🔧 **Service Unavailable** | Health check failures | Critical |
-
-### Alert Channels
-- 📧 Email notifications
-- 💬 Slack integration
-- 📱 PagerDuty escalation
 
 ---
 
