@@ -24,6 +24,7 @@
 - [🚀 Getting Started](#-getting-started)
 - [⚙️ Features](#️-features)
 - [📊 Grafana Dashboards](#-grafana-dashboards)
+- [🔔 Alerts Configuration](#-alerts-configuration)
 - [🛠️ Tech Stack](#️-tech-stack)
 - [📜 License](#-license)
 
@@ -233,6 +234,23 @@ Payment-Gateway-Obs/
 
 ---
 
+## 🔔 Alerts Configuration
+
+### Predefined Alert Rules
+
+| Alert | Condition | Severity |
+|-------|-----------|----------|
+| 🚨 **High Error Rate** | Error rate > 5% for 5 minutes | Critical |
+| 🐌 **Slow Response** | P95 latency > 1000ms for 2 minutes | Warning |
+| 📉 **Low Transaction Volume** | Transaction rate < 10/hour | Warning |
+| 💾 **Database Connection** | MongoDB connection failures | Critical |
+| 🔧 **Service Unavailable** | Health check failures | Critical |
+
+### Alert Channels
+- 📧 Email notifications
+  
+---
+
 ## 🛠️ Tech Stack
 
 ### Backend
@@ -244,7 +262,7 @@ Payment-Gateway-Obs/
 ### Frontend
 - **⚛️ React.js** - UI framework
 - **⚡ Vite** - Build tool and dev server
-- **🎨 Tailwind CSS** - Responsive design
+- **🎨 Modern CSS** - Responsive design
 
 ### Observability Stack
 - **📊 Grafana** - Visualization and dashboards
