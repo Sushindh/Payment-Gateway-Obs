@@ -4,6 +4,7 @@ from databases import payment_collect
 from datetime import datetime
 from telemetry import tracer, meter
 import logging
+from pytz import timezone
 
 router = APIRouter()
 
@@ -37,7 +38,10 @@ async def payment(Pay: Payment):
             span.set_attribute("amount", pay.get("amount", 0))
 
         pay["status"] = "success"
-        pay["timestamp"] = datetime.now().isoformat()
+        india_tz = timezone("Asia/Kolkata")
+        # pay["timestamp"] = datetime.now(india_tz).strftime("%Y-%m-%d %A, %H:%M")
+        # Add year and month directly into the timestamp string
+        pay["timestamp"] = datetime.now(india_tz).strftime("%d-%m-%Y %A, %I:%M %p")
 
         result = await payment_collect.insert_one(pay)
 

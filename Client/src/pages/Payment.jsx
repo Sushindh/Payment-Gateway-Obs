@@ -64,6 +64,7 @@ const Payment = () => {
             name="cardholderName"
             value={formData.cardholderName}
             onChange={handleChange}
+            placeholder='  Enter your name'
             required
             className="mt-1  block h-7 w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
           />
@@ -77,6 +78,7 @@ const Payment = () => {
             type="text"
             id="cardNumber"
             name="cardNumber"
+            placeholder='  Enter your card number'
             value={formData.cardNumber}
             onChange={handleChange}
             required
@@ -112,6 +114,7 @@ const Payment = () => {
               type="text"
               id="cvv"
               name="cvv"
+              placeholder='  Enter your CVV'
               value={formData.cvv}
               onChange={handleChange}
               required
@@ -129,6 +132,7 @@ const Payment = () => {
             type="number"
             id="amount"
             name="amount"
+            placeholder='  Enter the Amount'
             value={formData.amount}
             onChange={handleChange}
             required
