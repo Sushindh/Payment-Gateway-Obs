@@ -156,9 +156,9 @@ Payment-Gateway-Obs/
    Open New Terminal
    
 6. **Open server**
-```bash
-   cd server
-```
+    ```bash
+       cd server
+    ```
 
 7. **Create a Virtual Environment & Activate the venv**
    ```bash
