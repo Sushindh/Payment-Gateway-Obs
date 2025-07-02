@@ -184,7 +184,7 @@ Payment-Gateway-Obs/
     ```
 
    If you're using Windows machine, Install Docker and Docker Desktop. Verify the docker documentation for the installation of docker and docker desktop.
-   If you're using Linux machine, then it defaultly has Docker Engine. (So there is no requirement of docker desktop)
+   If you're using Linux machine, then it defaultly has Docker Engine. (So there is no requirement of docker desktop).
 
    Open a New Terminal
    Once all installed
