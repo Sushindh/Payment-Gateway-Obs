@@ -277,13 +277,6 @@ Payment-Gateway-Obs/
    - Exception tracking
    - Failure pattern analysis
 
-### Sample Visualizations
-
-- 📈 **Request Rate**: Real-time API call frequency
-- ⏱️ **Response Time**: P50, P95, P99 latency percentiles
-- 🚨 **Error Rate**: 4xx and 5xx error percentages
-- 🔄 **Transaction Volume**: Payment processing metrics
-
 ---
 
 ## 🔔 Alerts Configuration
