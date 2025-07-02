@@ -163,15 +163,22 @@ Payment-Gateway-Obs/
 7. **Create a Virtual Environment & Activate the venv**
    ```bash
    python -m venv venv
-   .venv/Scripts/activate
+   ```
+   For windows
+   ```bash
+   venv/Scripts/activate 
+   ```
+   For linux/macOS    
+   ```bash
+   source venv/bin/activate
    ```
 
-8. **Run the requirements.txt**
+9. **Run the requirements.txt**
    ```bash
    pip install -r requirements.txt
    ```
 
-9. **Launch the Server**
+10. **Launch the Server**
     ```bash
     uvicorn main:app --reload
     ```
@@ -182,7 +189,7 @@ Payment-Gateway-Obs/
    Open a New Terminal
    Once all installed
 
-10. **Launch the Docker Compose**
+11. **Launch the Docker Compose**
     ```bash
     docker-compose up --build
     ```
@@ -190,12 +197,12 @@ Payment-Gateway-Obs/
     This will the docker container and in the docker desktop all ports will be visible u can access from there.
     For Linux users who are not using docker desktop, u can use the ports mentioned here below (#Service URLs)
 
-11. **Closing the docker**
+12. **Closing the docker**
     ```bash
     cltr + c
     ```
     
-12. **Removing the files from Docker**
+13. **Removing the files from Docker**
     ```bash
     docker-compose down -v
     ```
