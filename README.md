@@ -138,17 +138,67 @@ Payment-Gateway-Obs/
    cd Payment-Gateway-Obs
    ```
 
-2. **Create Required Directories**
+2. **Open client**
    ```bash
-   mkdir -p server/routers/logs
+   cd client
    ```
 
-3. **Launch the Stack**
+3. **Install node modules**
    ```bash
-   docker-compose up --build
+   npm i
    ```
 
-4. **Verify Services**
+4. ***Launch the client***
+   ```bash
+   npm run dev
+   ```
+
+   Open New Terminal
+   
+6. **Open server**
+```bash
+   cd server
+```
+
+7. **Create a Virtual Environment & Activate the venv**
+   ```bash
+   python -m venv venv
+   .venv/Scripts/activate
+   ```
+
+8. **Run the requirements.txt**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+9. **Launch the Server**
+    ```bash
+    uvicorn main:app --reload
+    ```
+
+   If you're using Windows machine, Install Docker and Docker Desktop. Verify the docker documentation for the installation of docker and docker desktop.
+   If you're using Linux machine, then it defaultly has Docker Engine. (So there is no requirement of docker desktop)
+
+   Open a New Terminal
+   Once all installed
+
+10. **Launch the Docker Compose**
+    ```bash
+    docker-compose up --build
+    ```
+
+    This will the docker container and in the docker desktop all ports will be visible u can access from there.
+    For Linux users who are not using docker desktop, u can use the ports mentioned here below (#Service URLs)
+
+11. **Closing the docker**
+    ```bash
+    cltr + c
+    ```
+    
+12. **Removing the files from Docker**
+    ```bash
+    docker-compose down -v
+    ```
    
    Wait for all services to start, then access:
 
@@ -250,7 +300,9 @@ Payment-Gateway-Obs/
 
 ### Alert Channels
 - 📧 Email notifications
-  
+  we can customize the summary and subject of the mail. For eg, Below the email sent by grafana for the admin error
+  ![Screenshot 2025-07-02 181517](https://github.com/user-attachments/assets/d5018ed3-7033-411a-ba40-0f271ece70e3)
+  ![Screenshot 2025-07-02 181550](https://github.com/user-attachments/assets/5584932c-1052-44c5-9eba-80d473d18154)
 ---
 
 ## 🛠️ Tech Stack
